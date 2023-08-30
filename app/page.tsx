@@ -1,4 +1,14 @@
 import Image from 'next/image'
+import Navbar from "@/Components/Navbar";
+import Hero from "@/Components/Home";
+import Princing from "@/Components/Princing";
+import SignUpModal from "@/Modals/SignUpModal";
+import SignInModal from "@/Modals/SignInModal";
+import Sidebar from "@/Dashboard/Sidebar";
+import Header from "@/Dashboard/Header";
+import MainContent from "@/Dashboard/MainContent"
+
+
 
 export default function Home() {
   return (
