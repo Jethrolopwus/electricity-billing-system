@@ -4,7 +4,7 @@ import Princing from '@/Components/Princing'
 import Header from '@/Components/Dashboard/Header'
 import MainContent from '@/Components/Dashboard/MainContent'
 import Sidebar from '@/Components/Dashboard/Sidebar'
-import HomepageComponent from '@/Components/Home'
+
 
 type Props = {}
 
@@ -12,10 +12,11 @@ const page = (props: Props) => {
   return (
     <div>
       <Navbar />
-      {/* <Sidebar/> */}
       <Header />
+      <div className='flex'>
+      <Sidebar/>
       <MainContent />
-      {/* <HomepageComponent /> */}
+      </div>
       <Princing />
     </div>
   )
