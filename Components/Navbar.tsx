@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react';
 //i cant install this try phosphor icons
 // import { MenuIcon, XIcon } from "@heroicons/react/outline";

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-const Home = () => {
+const HomepageComponent = () => {
   return (
     <div className='w-full h-screen bg-zinc-300 flex flex-col justify-center items-center'>
       <div className='max-w-[1240px] m-auto pt-4'>
@@ -19,4 +19,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default HomepageComponent;

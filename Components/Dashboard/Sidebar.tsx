@@ -8,7 +8,7 @@ const Sidebar = () => {
       <ul>
         <li className="mb-2 border-2 rounded-xl bg-slate-900 text-white " > <Link to="Dashboard"> Dashboard </Link> </li>
         <li className="mb-2 border-2 rounded-xl bg-slate-900 text-white "> <Link to="UserProfile">Profile </Link></li>
-        <li className="mb-2 border-2 rounded-xl bg-slate-900 text-white "> <Link>Settings </Link></li>
+        <li className="mb-2 border-2 rounded-xl bg-slate-900 text-white "> <Link to='#'>Settings </Link></li>
       </ul>
     </div>
   );

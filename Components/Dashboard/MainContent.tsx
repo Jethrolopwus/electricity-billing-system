@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, HtmlHTMLAttributes, useState } from 'react';
 
 const MainContent = () => {
   const [selectedOption1, setSelectedOption1] = useState('');
   const [selectedOption2, setSelectedOption2] = useState('');
 
-  const handleOption1Change = (event) => {
+  const handleOption1Change = (event: ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption1(event.target.value);
   };
 
-  const handleOption2Change = (event) => {
+  const handleOption2Change = (event: ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption2(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: ChangeEvent) => {
     event.preventDefault();
     // Handle form submission here
   };
@@ -55,7 +55,7 @@ const MainContent = () => {
       </div>
       
       
-      <form  onSubmit={handleSubmit}>
+      <form  onSubmit={()=>handleSubmit}>
          <div>
             <label>Meter No:</label>
             <br />
