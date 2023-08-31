@@ -1,16 +1,16 @@
-import React, { ChangeEvent } from 'react'
+'use client'
+import React, { FormEvent } from 'react'
 
 type Props = {}
-const handleSubmit = (event: ChangeEvent) => {
-  event.preventDefault();
-  // Handle form submission here
-};
 
-export const page = (props: Props) => {
+function page({ }: Props) {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>)=>{
+    e.preventDefault();
+  }
   return (
-    <div className='w-full '>
-      <h2 className="text-xl font-bold mb-4 mt-6">Welcome to Your Profile page</h2>
-      <form  onSubmit={()=>handleSubmit}>
+   <div>
+      <h2 className="text-xl font-bold mb-4 mt-6">Welcome to Your Dashboard</h2>
+      <form  onSubmit={handleSubmit}>
          <div>
             <label>Meter No:</label>
             <p>Your Meter Numbr {}</p>
@@ -42,3 +42,5 @@ export const page = (props: Props) => {
     </div>
   )
 }
+
+export default page
