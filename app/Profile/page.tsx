@@ -8,31 +8,28 @@ const handleSubmit = (event: ChangeEvent) => {
 
 export const page = (props: Props) => {
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-4 mt-6">Welcome to Your Dashboard</h2>
-
-
-     
+    <div className='w-full '>
+      <h2 className="text-xl font-bold mb-4 mt-6">Welcome to Your Profile page</h2>
       <form  onSubmit={()=>handleSubmit}>
          <div>
             <label>Meter No:</label>
-            <br />
-            <input type='number' placeholder='Enter Your Meter Number' />
+            <p>Your Meter Numbr {}</p>
         </div> 
         <div>
             <label>Phone No:</label>
             <br />
-            <input type='number' placeholder='Enter Your Phone Number' />
+            <p> Your Phone Number {}</p>
         </div> 
         <div>
             <label>Amount</label>
             <br />
-            <input type='number' placeholder='Enter Amount' />
+            <p>{}</p>
         </div> 
         <div>
-            <label>Date</label>
-            <br />
-            <input type='date' placeholder='Enter Amount' />
+        <label>
+        Select a Date:
+        <h2>Date of transactin {}</h2>
+      </label>
         </div> 
         <button
           type="submit"
