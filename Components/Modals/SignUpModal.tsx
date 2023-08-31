@@ -22,7 +22,7 @@ const SignUpModal = ({setIsSignUpModalOpen}:{setIsSignUpModalOpen: React.Dispatc
         okText="Submit"
         onCancel={handleCancel}
         okButtonProps={{
-          disabled: true,
+          disabled: false,
           style: {
             background: '#000',  
             borderColor: '#1890ff',  

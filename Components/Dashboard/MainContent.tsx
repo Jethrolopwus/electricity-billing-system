@@ -20,7 +20,7 @@ const MainContent = () => {
 
   return (
     <div className="p-4 w-[80%] h-[80%] mx-auto ">
-      <h2 className="text-lg font-bold mb-4">Welcome to Your Dashboard</h2>
+      <h2 className="text-xl font-bold mb-4 mt-6">Welcome to Your Dashboard</h2>
       <div className='flex justify-center gap-4'>
       <div className="mb-4">
         <label className="block text-sm font-medium">Prepaid</label>
@@ -74,7 +74,7 @@ const MainContent = () => {
         </div> 
         <button
           type="submit"
-          className="bg-gray-800 w-2/5 text-white p-2 rounded-md mt-4 text-xl"
+          className="bg-gray-800 w-1/3 text-white p-2 rounded-md mt-4 text-xl"
         >
         Make Payment
         </button>
