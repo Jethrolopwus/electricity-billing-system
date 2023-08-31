@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className='w-full h-full flex justify-between items-center px-2'>
         <div className='flex items-center'>
           <h1 className='text-3xl font-bold mr-6 sm:text-4xl'>E-Billing</h1>
-          <ul className='hidden md:flex'>
+          <ul className='hidden gap-4 md:flex'>
             <li><Link to="home" smooth={true} duration={500} >Home</Link></li>
             <li><Link to="utility" smooth={true} offset={-200} duration={500} >Utility</Link></li>
             <li><Link to="princing" smooth={true} offset={-50} duration={500} >Princing</Link></li>

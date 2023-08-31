@@ -22,7 +22,7 @@ const SignUpModal = ({setIsSignUpModalOpen}:{setIsSignUpModalOpen: React.Dispatc
         okText="Submit"
         onCancel={handleCancel}
         okButtonProps={{
-          disabled: false,
+          disabled: true,
           style: {
             background: '#000',  
             borderColor: '#1890ff',  
@@ -49,6 +49,7 @@ const SignUpModal = ({setIsSignUpModalOpen}:{setIsSignUpModalOpen: React.Dispatc
           <label className='text-lg font-bold'>PASSWORD</label> <br />
           <input className='w-[100px] text-xl' type='password' placeholder='Enter Your Password' />
         </div>
+        <button></button>
         </form>
       </Modal>
       {/* <div className='bg-white max-w-[10rem]'>

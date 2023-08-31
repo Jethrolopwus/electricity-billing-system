@@ -1,3 +1,4 @@
+'use client';
 import React, { ChangeEvent, HtmlHTMLAttributes, useState } from 'react';
 
 const MainContent = () => {
