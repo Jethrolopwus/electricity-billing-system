@@ -5,10 +5,10 @@ import React, { ChangeEvent } from 'react';
 
 
 const SignUpModal = ({setIsSignUpModalOpen}:{setIsSignUpModalOpen: React.Dispatch<React.SetStateAction<boolean>>}) => {
-  const handleOk = (e: ChangeEvent) => {
+  const handleOk = () => {
     setIsSignUpModalOpen(false)
   };
-  const handleCancel = (e: ChangeEvent) => {
+  const handleCancel = () => {
     setIsSignUpModalOpen(false)
       };
 
@@ -18,9 +18,9 @@ const SignUpModal = ({setIsSignUpModalOpen}:{setIsSignUpModalOpen: React.Dispatc
       <Modal
         title="Registration Form"
         open={true}
-        onOk={()=>handleOk}
+        onOk={handleOk}
         okText="Submit"
-        onCancel={()=>handleCancel}
+        onCancel={handleCancel}
         okButtonProps={{
           disabled: false,
           style: {

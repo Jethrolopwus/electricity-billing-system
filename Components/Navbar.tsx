@@ -14,10 +14,10 @@ const Navbar = () => {
 
   const handleClick = () => setNav(!nav);
 
-  const closeSignUpModal = () => setIsSignUpModalOpen(false);
+  // const closeSignUpModal = () => setIsSignUpModalOpen(false);
   const handleSignInClick = () => setIsSignInModalOpen(true);
   const handleSignUpClick = () => setIsSignUpModalOpen(true)
-  const closeSignInModal = () => setIsSignInModalOpen(false)
+  // const closeSignInModal = () => setIsSignInModalOpen(false)
 
 
   return (
@@ -57,8 +57,8 @@ const Navbar = () => {
             <button onClick={handleSignUpClick} className='px-8 py-3'>Sign Up</button>
           </div>
         </div>}
-      {isSignUpModalOpen && <SignUpModal setIsSignUpModalOpen={setIsSignUpModalOpen} />}
-      {isSignInModalOpen && <SignInModal setIsSignInModalOpen={setIsSignInModalOpen} />}
+      { isSignUpModalOpen && <SignUpModal setIsSignUpModalOpen={setIsSignUpModalOpen} />}
+      { isSignInModalOpen && <SignInModal setIsSignInModalOpen={setIsSignInModalOpen} />}
     </div>
   );
 }
