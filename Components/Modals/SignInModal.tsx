@@ -1,13 +1,14 @@
 // import React, { useState } from 'react';
 import { Modal } from 'antd';
+import { ChangeEvent } from 'react';
 
 
 
-const SigninModal = ({setIsSignInModalOpen}) => {
-  const handleOk = (e) => {
+const SigninModal = ({setIsSignInModalOpen}:{setIsSignInModalOpen : React.Dispatch<React.SetStateAction<boolean>>}) => {
+  const handleOk = (e:ChangeEvent) => {
     setIsSignInModalOpen(false)
   };
-  const handleCancel = (e) => {
+  const handleCancel = (e: ChangeEvent) => {
     setIsSignInModalOpen(false)
       };
 
@@ -17,9 +18,9 @@ const SigninModal = ({setIsSignInModalOpen}) => {
       <Modal
         title="Login Form"
         open={true}
-        onOk={handleOk}
+        onOk={()=>handleOk}
         okText="Login"
-        onCancel={handleCancel}
+        onCancel={()=>handleCancel}
         okButtonProps={{
           disabled: false,
           style: {
