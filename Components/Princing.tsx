@@ -1,8 +1,12 @@
+'use client';
 import React from 'react';
 //use phosphor icons
 // import { CheckIcon } from '@heroicons/react/solid';
 
+
+
 const Princing = () => {
+
   return (
     <div  className='w-full text-white my-24'>
       <div className='w-full h-[800px] bg-slate-900 absolute mix-blend-overlay'></div>
@@ -24,11 +28,12 @@ const Princing = () => {
             <p className='text-2xl py-8 text-slate-500'>these prices ranges from your subscroption plans</p>
               <div className='text-2xl '>
                 
-                <p className='flex py-4'>icon Premium plans</p>
-                <p className='flex py-4'>icon standard plans</p>
-                <p className='flex py-4'>icon private plans</p>
-                <p className='flex py-4'>icon normal plans</p>
-                <button className='w-full py-4 my-4'>Suscribe</button>
+                <p className='flex py-4'>Premium plans</p>
+                <p className='flex py-4'>standard plans</p>
+                <p className='flex py-4'>private plans</p>
+                <p className='flex py-4'>normal plans</p>
+                <button className='w-full py-4 my-4 border-2 rounded-xl bg-blue-700'>Suscribe</button>
+
               </div>
         </div>
         <div className='bg-white text-slate-900 m-4 p-8 rounded-xl shadow-2xl relative'>
@@ -38,12 +43,11 @@ const Princing = () => {
           </div>
             <p className='text-2xl py-8 text-slate-500'>these prices ranges from your subscroption plans</p>
               <div className='text-2xl '>
-                
-                <p className='flex py-4'>icon Premium plans</p>
-                <p className='flex py-4'>icon standard plans</p>
-                <p className='flex py-4'>icon private plans</p>
-                <p className='flex py-4'>icon normal plans</p>
-                <button className='w-full py-4 my-4'>Suscribe</button>
+                <p className='flex py-4'>Premium plans</p>
+                <p className='flex py-4'>standard plans</p>
+                <p className='flex py-4'>private plans</p>
+                <p className='flex py-4'>normal plans</p>
+                <button className='w-full py-4 my-4 border-2 rounded-xl bg-blue-700'>Suscribe</button>
               </div>
         </div>
 
