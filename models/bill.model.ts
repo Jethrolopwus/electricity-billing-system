@@ -6,6 +6,7 @@ interface Bills {
  amount: number;
  meterNumber: string;
  phoneNumber: string;
+ prepaid:string
  postPaid: string
 }
 const BillsSchema = new Schema<Bills>({
@@ -15,13 +16,13 @@ const BillsSchema = new Schema<Bills>({
   ref: 'User',
   required: [true, 'Account Owner is required']
  },
- company: {
+ prepaid: {
   type: String,
-  required: [true, 'Company is required']
+  required: [true, 'prepaid is required']
  },
  postPaid: {
   type: String,
-  required: [true, 'Company is required']
+  required: [true, 'prepaid is required']
  },
  amount: {
   type: Number,

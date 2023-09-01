@@ -9,7 +9,8 @@ const MainContent = ({data}:{data: any}) => {
     meterNumber: '',
     phoneNumber: '',
     amount: 0,
-    // postpaid: '',
+    prepaid: '',
+    postPaid: '',
   })
 
   const handleOption1Change = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -33,8 +34,8 @@ const MainContent = ({data}:{data: any}) => {
     let obj = {
       ...dataObj,
       accountOwner: userData?._id,
-      company: selectedOption1 || selectedOption2
-      // postPaid: setSelectedOption1
+      prepaid: setSelectedOption1,
+      postPaid: setSelectedOption2
     };
     
     const res = await fetch('api/billing', {

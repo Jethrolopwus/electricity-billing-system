@@ -49,7 +49,7 @@ const SigninModal = ({setIsSignInModalOpen}:{setIsSignInModalOpen : React.Dispat
     <div className=''>
     <div className=''>
       <Modal
-        title="Login Form"
+        title={<h1 className='ml-44 text-2xl font-bold'>Login form</h1>}
         open={true}
         onOk={handleOk}
         okText="Login"
@@ -69,18 +69,18 @@ const SigninModal = ({setIsSignInModalOpen}:{setIsSignInModalOpen : React.Dispat
         }}
        footer={null}
       >
-       <form onSubmit={handleSubmit}>
+       <form onSubmit={handleSubmit} className=''>
       
         <div>
           <label className='text-lg font-bold'>EMAIL</label> <br />
-          <input className='w-[200px] text-xl'  type='email' placeholder='Enter Your Email' name='email' onChange={handleInputChange} />
+          <input className='w-full text-xl'  type='email' placeholder='Enter Your Email' name='email' onChange={handleInputChange} />
         </div>
         <div>
           <label className='text-lg font-bold'>PASSWORD</label> <br />
-          <input className='w-[200px] text-xl' type='password' placeholder='Enter Your Password' name='password' onChange={handleInputChange} />
+          <input className='w-full text-xl' type='password' placeholder='Enter Your Password' name='password' onChange={handleInputChange} />
             </div>
             
-             <button type='submit' className='w-[160px] rounded-lg bg-blue-900 text-white text-lg hover:bg-slate-600 p-3 mt-4'>
+             <button type='submit' className='w-full rounded-lg bg-blue-900 text-white text-lg hover:bg-slate-600 p-3 mt-4'>
               submit
         </button>
         </form>

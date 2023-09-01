@@ -5,8 +5,7 @@ export async function POST(request: Request) {
   await connectToDB();
   try {
     const body = await request.json();
-    const { email, password } = body;
-   const isUser = await User.findOne({ email });
+    const { email, password } = body;   const isUser = await User.findOne({ email});
    if (isUser && password === isUser.password) {
     return new Response(JSON.stringify(isUser), { status: 200 });
    }
