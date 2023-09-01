@@ -15,7 +15,7 @@ const Princing = () => {
             <div className='text-center py-8 text-slate-300'>
                 <h2 className='text-3xl uppercase'>Princing</h2>
                 <h3 className='text-5xl font-bold text-white py-8'>The Right Price for your Light</h3>
-                <p className='text-3xl'>This platforms exist to give ou the easiest and flexible princing to acces Light at the confort of your zone</p>
+                <p className='text-3xl'>This platforms exist to give out the easiest and flexible princing to access Light at the confort of your zone</p>
             </div>
       </div>
 
@@ -25,7 +25,7 @@ const Princing = () => {
             <div>
               <p className='text-6xl font-bold py-4 flex'>$49<span className='text-xl text-slate-500 flex flex-col justify-end'>/mo</span></p>
           </div>
-            <p className='text-2xl py-8 text-slate-500'>these prices ranges from your subscroption plans</p>
+            <p className='text-2xl py-8 text-slate-500'>These prices ranges from your subscription plans</p>
               <div className='text-2xl '>
                 
                 <p className='flex py-4'>Premium plans</p>
@@ -41,7 +41,7 @@ const Princing = () => {
             <div>
               <p className='text-6xl font-bold py-4 flex'>$99<span className='text-xl text-slate-500 flex flex-col justify-end'>/mo</span></p>
           </div>
-            <p className='text-2xl py-8 text-slate-500'>these prices ranges from your subscroption plans</p>
+            <p className='text-2xl py-8 text-slate-500'>these prices ranges from your subscription plans</p>
               <div className='text-2xl '>
                 <p className='flex py-4'>Premium plans</p>
                 <p className='flex py-4'>standard plans</p>

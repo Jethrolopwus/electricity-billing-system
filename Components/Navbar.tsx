@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 // import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import SignUpModal from '@/Components/Modals/SignUpModal';
 import SignInModal from '@/Components/Modals/SignInModal';
-// eslint-disable-next-line no-unused-vars
-import { Link, animateScroll as scroll, } from 'react-scroll';
+// // eslint-disable-next-line no-unused-vars
+// import { Link, animateScroll as scroll, } from 'react-scroll';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -26,9 +27,8 @@ const Navbar = () => {
         <div className='flex items-center'>
           <h1 className='text-3xl font-bold mr-6 sm:text-4xl'>E-Billing</h1>
           <ul className='hidden gap-4 md:flex'>
-            <li><Link to="home" smooth={true} duration={500} className='font-bold text-lg'>Home</Link></li>
-            <li><Link to="utility" smooth={true} offset={-200} duration={500} className='font-bold text-lg'>Utility</Link></li>
-            <li><Link to="princing" smooth={true} offset={-50} duration={500} className='font-bold text-lg'>Princing</Link></li>
+            <li><Link href='/home' className='font-bold text-lg'>Home</Link></li>
+            <li><Link href='/princing' className='font-bold text-lg'>Princing</Link></li>
           </ul>
         </div>
         <div className='hidden md:flex pr-4'>
@@ -47,9 +47,8 @@ const Navbar = () => {
           <div className='flex items-center'>
             {/* <h1 className='text-3xl font-bold mr-6 sm:text-4xl'>E-Billing</h1> */}
             <ul className='flex flex-col'>
-              <li><Link to="home" smooth={true} duration={500} >Home</Link></li>
-              <li><Link to="utility" smooth={true} offset={-200} duration={500} >Utility</Link></li>
-              <li><Link to="princing" smooth={true} offset={-50} duration={500} >Princing</Link></li>
+              <li><Link href=" " className='font-bold text-lg'>Home</Link></li>
+              <li><Link href=" " className='font-bold text-lg'>Princing</Link></li>
             </ul>
           </div>
           <div className='flex justify-between pr-4'>

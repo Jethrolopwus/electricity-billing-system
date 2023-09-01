@@ -9,7 +9,7 @@ function page({ }: Props) {
   }
   return (
    <div>
-      <h2 className="text-xl font-bold mb-4 mt-6">Welcome to Your Dashboard</h2>
+      <h2 className="text-xl font-bold mb-4 mt-6">Welcome to Your Profile</h2>
       <form  onSubmit={handleSubmit}>
          <div>
             <label>Meter No:</label>
