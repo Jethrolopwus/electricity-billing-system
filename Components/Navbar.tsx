@@ -26,14 +26,14 @@ const Navbar = () => {
         <div className='flex items-center'>
           <h1 className='text-3xl font-bold mr-6 sm:text-4xl'>E-Billing</h1>
           <ul className='hidden gap-4 md:flex'>
-            <li><Link to="home" smooth={true} duration={500} >Home</Link></li>
-            <li><Link to="utility" smooth={true} offset={-200} duration={500} >Utility</Link></li>
-            <li><Link to="princing" smooth={true} offset={-50} duration={500} >Princing</Link></li>
+            <li><Link to="home" smooth={true} duration={500} className='font-bold text-lg'>Home</Link></li>
+            <li><Link to="utility" smooth={true} offset={-200} duration={500} className='font-bold text-lg'>Utility</Link></li>
+            <li><Link to="princing" smooth={true} offset={-50} duration={500} className='font-bold text-lg'>Princing</Link></li>
           </ul>
         </div>
         <div className='hidden md:flex pr-4'>
-          <button onClick={handleSignInClick} className='border-none bg-transparent text-black mr-4'>Sign In</button>
-          <button onClick={handleSignUpClick} className='px-8 py-3'>Sign Up</button>
+          <button onClick={handleSignInClick} className=' bg-blue-600 text-white rounded-xl mr-8 px-8 py-3'>Sign In</button>
+          <button onClick={handleSignUpClick} className='px-8 py-3 text-white bg-blue-600 rounded-xl'>Sign Up</button>
         </div>
       </div>
       <div className='md:hidden' onClick={handleClick}>
@@ -53,8 +53,8 @@ const Navbar = () => {
             </ul>
           </div>
           <div className='flex justify-between pr-4'>
-            <button className='border-none bg-transparent text-black mr-4'>Sign In</button>
-            <button onClick={handleSignUpClick} className='px-8 py-3'>Sign Up</button>
+            <button onClick={handleSignInClick} className=' bg-blue-600 text-white rounded-xl px-8 py-3 mr-8'>Sign In</button>
+            <button onClick={handleSignUpClick} className='px-8 py-3 text-white bg-blue-600 rounded-xl'>Sign Up</button>
           </div>
         </div>}
       { isSignUpModalOpen && <SignUpModal setIsSignUpModalOpen={setIsSignUpModalOpen} />}
