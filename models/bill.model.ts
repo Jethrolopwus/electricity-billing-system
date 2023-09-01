@@ -28,7 +28,6 @@ const BillsSchema = new Schema<Bills>({
   required: [true, 'Meter Number is required']
  },
  phoneNumber: {
-  
   type: String,
   required: [true, 'Phone Number is required']
  },

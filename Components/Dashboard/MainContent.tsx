@@ -1,9 +1,15 @@
 'use client';
-import React, { ChangeEvent, HtmlHTMLAttributes, useState } from 'react';
+import React, { ChangeEvent, FormEvent, HtmlHTMLAttributes, useState } from 'react';
 
-const MainContent = () => {
+const MainContent = ({data}:{data: any}) => {
   const [selectedOption1, setSelectedOption1] = useState('');
   const [selectedOption2, setSelectedOption2] = useState('');
+  const [userData,setUserData]= useState(JSON.parse(data))
+  const [dataObj, setDataObj] = useState({
+    meterNumber: '',
+    phoneNumber: '',
+    amount:0,
+  })
 
   const handleOption1Change = (event: ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption1(event.target.value);
@@ -13,14 +19,38 @@ const MainContent = () => {
     setSelectedOption2(event.target.value);
   };
 
-  const handleSubmit = (event: ChangeEvent) => {
-    event.preventDefault();
-    // Handle form submission here
+ const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setDataObj((prevData) => ({ ...prevData, [name]: value }));
   };
+  
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!(dataObj.meterNumber || dataObj.amount || dataObj.phoneNumber)) {
+      return alert('all field required')
+    }
+    let obj = {
+      ...dataObj,
+      accountOwner: userData?._id,
+      company: selectedOption1 || selectedOption2
+    };
+    
+    const res = await fetch('api/billing', {
+      method: 'POST',
+      body: JSON.stringify(obj)
+    });
 
+    if (res.ok) {
+      const  data = await res.json()
+      console.log(data)
+      alert('Payment successful')
+      return
+    }
+  }  
+console.log(userData)
   return (
     <div className="p-4 w-[80%] h-[80%] mx-auto ">
-      <h2 className="text-xl font-bold mb-4 mt-6">Welcome to Your Dashboard</h2>
+      <h2 className="text-xl font-bold mb-4 mt-6">Welcome {userData?.userName}</h2>
       <div className='flex justify-center gap-4'>
       <div className="mb-4">
         <label className="block text-sm font-medium">Prepaid</label>
@@ -56,21 +86,21 @@ const MainContent = () => {
       </div>
       
       
-      <form  onSubmit={()=>handleSubmit}>
+      <form  onSubmit={handleSubmit}>
          <div>
             <label>Meter No:</label>
             <br />
-            <input type='number' placeholder='Enter Your Meter Number' />
+            <input type='text' placeholder='Enter Your Meter Number' name='meterNumber' onChange={handleInputChange}/>
         </div> 
         <div>
             <label>Phone No:</label>
             <br />
-            <input type='number' placeholder='Enter Your Phone Number' />
+            <input type='text' placeholder='Enter Your Phone Number' name='phoneNumber' onChange={handleInputChange}/>
         </div> 
         <div>
             <label>Amount</label>
             <br />
-            <input type='number' placeholder='Enter Amount' />
+            <input type='number' placeholder='Enter Amount' name='amount' onChange={handleInputChange}/>
         </div> 
         <button
           type="submit"
