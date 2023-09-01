@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 import { Modal } from 'antd';
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 
 
 
@@ -10,8 +10,34 @@ const SignUpModal = ({setIsSignUpModalOpen}:{setIsSignUpModalOpen: React.Dispatc
   };
   const handleCancel = () => {
     setIsSignUpModalOpen(false)
-      };
+  };
+  
+  const [data, setData] = useState({
+    userName: '',
+    email: '',
+    password:''
+  })
+ const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setData((prevData) => ({ ...prevData, [name]: value }));
+  };
+  
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    let obj = {
+      ...data
+    };
+    
+    const res = await fetch('api/auth/new', {
+      method: 'POST',
+      body: JSON.stringify(obj)
+    });
 
+    if (res.ok) {
+      alert('Sign Up successful')
+      return
+    }
+  }
   return (
     <div className=''>
     <div className=''>
@@ -34,22 +60,25 @@ const SignUpModal = ({setIsSignUpModalOpen}:{setIsSignUpModalOpen: React.Dispatc
           disabled: false,
          
         }}
+       footer={null}
        
       >
-        <form>
+        <form onSubmit={handleSubmit}>
         <div>
-          <label className='text-lg font-bold'>USERNAME</label> <br />
-          <input className='w-[120px] text-xl' type='text' placeholder='Enter Your Name' />
+          <label className='text-lg font-bold'>FULL NAME</label> <br />
+          <input  name='userName'className='w-[120px] text-xl' type='text' placeholder='Enter Your Name' onChange={handleInputChange}/>
         </div>
         <div>
           <label className='text-lg font-bold'>EMAIL</label> <br />
-          <input className='w-[120px] text-xl'  type='email' placeholder='Enter Your Email' />
+          <input name='email' className='w-[120px] text-xl'  type='email' placeholder='Enter Your Email' onChange={handleInputChange}/>
         </div>
         <div>
           <label className='text-lg font-bold'>PASSWORD</label> <br />
-          <input className='w-[120px] text-xl' type='password' placeholder='Enter Your Password' />
+          <input  name='password'className='w-[120px] text-xl' type='password' placeholder='Enter Your Password'onChange={handleInputChange} />
         </div>
-        <button></button>
+        <button type='submit' className='w-[160px] rounded-lg bg-slate-400 hover:bg-slate-600 p-3 mt-4'>
+              submit
+        </button>
         </form>
       </Modal>
       {/* <div className='bg-white max-w-[10rem]'>
