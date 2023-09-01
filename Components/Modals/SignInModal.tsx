@@ -70,14 +70,14 @@ const SigninModal = ({setIsSignInModalOpen}:{setIsSignInModalOpen : React.Dispat
       
         <div>
           <label className='text-lg font-bold'>EMAIL</label> <br />
-          <input className='w-[120px] text-xl'  type='email' placeholder='Enter Your Email' name='email' onChange={handleInputChange} />
+          <input className='w-[200px] text-xl'  type='email' placeholder='Enter Your Email' name='email' onChange={handleInputChange} />
         </div>
         <div>
           <label className='text-lg font-bold'>PASSWORD</label> <br />
-          <input className='w-[120px] text-xl' type='password' placeholder='Enter Your Password' name='password' onChange={handleInputChange} />
+          <input className='w-[200px] text-xl' type='password' placeholder='Enter Your Password' name='password' onChange={handleInputChange} />
             </div>
             
-             <button type='submit' className='w-[160px] rounded-lg bg-slate-400 hover:bg-slate-600 p-3 mt-4'>
+             <button type='submit' className='w-[160px] rounded-lg bg-blue-900 text-white text-lg hover:bg-slate-600 p-3 mt-4'>
               submit
         </button>
         </form>

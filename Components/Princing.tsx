@@ -32,7 +32,7 @@ const Princing = () => {
                 <p className='flex py-4'>standard plans</p>
                 <p className='flex py-4'>private plans</p>
                 <p className='flex py-4'>normal plans</p>
-                <button className='w-full py-4 my-4 border-2 rounded-xl bg-blue-700'>Suscribe</button>
+                <button className='w-full py-4 my-4 border-2 text-white rounded-xl bg-blue-700'>Suscribe</button>
 
               </div>
         </div>
@@ -47,7 +47,7 @@ const Princing = () => {
                 <p className='flex py-4'>standard plans</p>
                 <p className='flex py-4'>private plans</p>
                 <p className='flex py-4'>normal plans</p>
-                <button className='w-full py-4 my-4 border-2 rounded-xl bg-blue-700'>Suscribe</button>
+                <button className='w-full py-4 my-4 border-2 text-white rounded-xl bg-blue-700'>Suscribe</button>
               </div>
         </div>
 

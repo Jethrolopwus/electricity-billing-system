@@ -12,7 +12,7 @@ const Hero = () => {
             <button className='bg-blue-600 text-white px-4 py-2 mt-4 rounded-md'>Subscribe</button>
           </div>
           <div>
-            <Image className='w-full h-[80%]' src={meter.jpg} width={200} height={100} alt='/' />
+            {/* <Image className='w-full h-[80%]' src={'/meter.jpg'} width={200} height={100} alt='/' /> */}
           </div>
         </div>
       </div>
