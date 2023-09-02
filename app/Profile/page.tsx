@@ -6,15 +6,17 @@ import React, { FormEvent, useEffect, useState } from 'react'
 type Props = {}
 
 function ProfilePage({ }: Props) {
-  const user = localStorage.getItem('user')
   const [bill, setBill] = useState([])
   useEffect(() => {
-     if (!user) {
-      console.log('No User')
+    if (typeof window !== 'undefined') {
+      const user = localStorage.getItem('user')
+      if (!user) {
+        console.log('No User')
+      }
+      const data = JSON.parse(user ?? '')
+      getAllPayments(data._id)
     }
-    const data = JSON.parse(user??'')
-    getAllPayments(data._id)
-  },[user])
+  },[])
   async function getAllPayments(id: string) { 
    
     let data = {
