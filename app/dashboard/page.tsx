@@ -12,6 +12,7 @@ type Props = {}
 
 const DashboardPage = (props: Props) => {
 
+  
   const user = localStorage.getItem('user')
   useEffect(() => {
     if (!user) {

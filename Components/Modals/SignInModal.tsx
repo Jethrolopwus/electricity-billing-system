@@ -1,5 +1,6 @@
 // import React, { useState } from 'react';
 import { Modal } from 'antd';
+import { redirect, useRouter } from 'next/navigation';
 import { ChangeEvent, FormEvent, useState } from 'react';
 
 
@@ -11,9 +12,9 @@ const SigninModal = ({setIsSignInModalOpen}:{setIsSignInModalOpen : React.Dispat
   const handleCancel = () => {
     setIsSignInModalOpen(false)
   };
+  const router = useRouter()
   
   const [data, setData] = useState({
-    userName: '',
     email: '',
     password:''
   })
@@ -35,9 +36,11 @@ const SigninModal = ({setIsSignInModalOpen}:{setIsSignInModalOpen : React.Dispat
 
     if (res.ok) {
       const  data = await res.json()
-      // console.log(data)
+      console.log(data)
       localStorage.setItem('user', JSON.stringify(data))
       alert('Sign in successful')
+      setIsSignInModalOpen(false)
+      router.push('/dashboard')
       return
     }
   }

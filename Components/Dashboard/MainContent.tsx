@@ -4,11 +4,12 @@ import React, { ChangeEvent, FormEvent, HtmlHTMLAttributes, useState } from 'rea
 const MainContent = ({data}:{data: any}) => {
   const [selectedOption1, setSelectedOption1] = useState('');
   const [selectedOption2, setSelectedOption2] = useState('');
-  const [userData,setUserData]= useState(JSON.parse(data))
+  const [userData]= useState(JSON.parse(data))
   const [dataObj, setDataObj] = useState({
     meterNumber: '',
     phoneNumber: '',
-    amount:0,
+    amount: 0,
+    // postpaid: '',
   })
 
   const handleOption1Change = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -33,6 +34,7 @@ const MainContent = ({data}:{data: any}) => {
       ...dataObj,
       accountOwner: userData?._id,
       company: selectedOption1 || selectedOption2
+      // postPaid: setSelectedOption1
     };
     
     const res = await fetch('api/billing', {
