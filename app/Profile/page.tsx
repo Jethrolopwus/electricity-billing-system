@@ -11,9 +11,9 @@ function ProfilePage({ }: Props) {
     if (typeof window !== 'undefined') {
       const user = localStorage.getItem('user')
       if (!user) {
-        console.log('No User')
+        return
       }
-      const data = JSON.parse(user ?? '')
+      const data = JSON.parse(user)
       getAllPayments(data._id)
     }
   },[])

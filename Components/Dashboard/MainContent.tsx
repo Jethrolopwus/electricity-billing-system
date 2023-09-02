@@ -4,7 +4,7 @@ import React, { ChangeEvent, FormEvent, HtmlHTMLAttributes, useState } from 'rea
 const MainContent = ({data}:{data: any}) => {
   const [selectedOption1, setSelectedOption1] = useState('');
   const [selectedOption2, setSelectedOption2] = useState('');
-  const [userData]= useState(JSON.parse(data))
+  const [userData]= useState(data)
   const [dataObj, setDataObj] = useState({
     meterNumber: '',
     phoneNumber: '',
