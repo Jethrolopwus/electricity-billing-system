@@ -20,7 +20,12 @@ const Navbar = () => {
   const handleSignUpClick = () => setIsSignUpModalOpen(true)
   // const closeSignInModal = () => setIsSignInModalOpen(false)
 
-
+  const handleScrollTo = () => {
+    const section = document.getElementById('PRICING')
+     if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+}
   return (
     <div className='w-screen  md:h-[80px] z-30 bg-slate-200 fixed drop-shadow-lg'>
       <div className='w-full h-full flex justify-between items-center px-2'>
@@ -28,7 +33,7 @@ const Navbar = () => {
           <h1 className='text-3xl font-bold mr-6 sm:text-4xl'>E-Billing</h1>
           <ul className='hidden gap-4 md:flex'>
             <li><Link href='/home' className='font-bold text-lg'>Home</Link></li>
-            <li><Link href='/princing' className='font-bold text-lg'>Princing</Link></li>
+            <li onClick={handleScrollTo} className='font-bold text-lg cursor-pointer'>Princing</li>
           </ul>
         </div>
         <div className='hidden md:flex pr-4'>
@@ -47,7 +52,7 @@ const Navbar = () => {
           <div className='flex items-center'>
             {/* <h1 className='text-3xl font-bold mr-6 sm:text-4xl'>E-Billing</h1> */}
             <ul className='flex flex-col'>
-              <li><Link href=" " className='font-bold text-lg'>Home</Link></li>
+              <li><a href="/" className='font-bold text-lg'>Home</a></li>
               <li><Link href=" " className='font-bold text-lg'>Princing</Link></li>
             </ul>
           </div>
