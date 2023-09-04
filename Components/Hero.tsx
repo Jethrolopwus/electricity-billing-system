@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <div name="home" className='w-full h-screen bg-zinc-300 flex flex-col justify-center items-center'>
+    <div className='w-full h-screen bg-zinc-300 flex flex-col justify-center items-center'>
       <div className='max-w-[1240px] m-auto pt-4'>
         <div className='grid md:grid-cols-2'>
           <div className='flex flex-col justify-center w-full items-center md:items-start '>

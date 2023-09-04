@@ -8,6 +8,7 @@ export async function connectToDB() {
     return;
   }
   let URI = process.env.MONGO_URI ?? '';
+  console.log(process.env.MONGO_URI)
   try {
     const options: ConnectOptions = {
       dbName:"packmyload"
