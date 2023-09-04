@@ -37,7 +37,9 @@ const SigninModal = ({setIsSignInModalOpen}:{setIsSignInModalOpen : React.Dispat
     if (res.ok) {
       const  data = await res.json()
       console.log(data)
-      localStorage.setItem('user', JSON.stringify(data))
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('user', JSON.stringify(data))
+      }
       alert('Sign in successful')
       setIsSignInModalOpen(false)
       router.push('/dashboard')

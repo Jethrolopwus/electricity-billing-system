@@ -1,6 +1,6 @@
 'use client'
 import Navbar from '@/Components/Navbar'
-import React, { use, useEffect } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import Princing from '@/Components/Princing'
 import Header from '@/Components/Dashboard/Header'
 import MainContent from '@/Components/Dashboard/MainContent'
@@ -11,14 +11,17 @@ import { redirect } from 'next/navigation'
 type Props = {}
 
 const DashboardPage = (props: Props) => {
-
-  
-  const user = localStorage.getItem('user')
+  const [currentUser,  setCurrentUser]= useState<any>()
   useEffect(() => {
-    if (!user) {
-      redirect('/')
+  if (typeof window !== 'undefined') {
+  // Perform localStorage action
+  const user = localStorage.getItem('user')
+  if (!user) {
+    redirect('/')
     }
-  })
+    setCurrentUser(user)
+}
+  },[])
   
   return (
     <div>
@@ -26,7 +29,7 @@ const DashboardPage = (props: Props) => {
       <Header />
       <div className='flex'>
       <Sidebar/>
-      <MainContent data={user}/>
+      <MainContent data={currentUser}/>
       </div>
       <Princing />
     </div>
