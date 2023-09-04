@@ -59,6 +59,11 @@ const columns = [
     dataIndex:'amount',
     key: 'amount',
   },
+  {
+    title: 'Token',
+    dataIndex:'token',
+    key: 'token',
+  },
    {
      title: 'Transaction Date',
     dataIndex:'createdAt',
@@ -72,7 +77,7 @@ const columns = [
    
       <Table className='w-full' dataSource={bill} columns={columns} />;
       
-
+    
     </div>
   )
 }

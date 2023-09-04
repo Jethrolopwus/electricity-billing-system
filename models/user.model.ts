@@ -4,6 +4,7 @@ interface User {
  userName: string;
  email: string;
  password: string;
+ token: string;
 }
 const UserSchema = new Schema<User>({
  userName: {
@@ -18,6 +19,10 @@ const UserSchema = new Schema<User>({
  password: {
   type: String,
   required: [true, 'Password is required']
+ },
+ token: {
+    type:String,
+    required: [true, 'token number required']
  }
 },
  { timestamps: true })

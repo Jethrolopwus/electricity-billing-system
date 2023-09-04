@@ -5,6 +5,7 @@ interface Bills {
  company: string;
  amount: number;
  meterNumber: string;
+ token: string;
  phoneNumber: string;
  prepaid: string;
  postpaid: string;
@@ -40,6 +41,10 @@ const BillsSchema = new Schema<Bills>({
   type: String,
   required: [true, 'Phone Number is required']
  },
+ token:{
+    type:String,
+    required: [true, 'token number required']
+ }
 },
  { timestamps: true })
 const Bills = models.Bills || model<Bills>('Bills', BillsSchema)

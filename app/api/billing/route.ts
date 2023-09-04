@@ -36,14 +36,14 @@ export async function POST(request: Request) {
       <div class="container">
         <h1>Electricity Bill Payment Receipt</h1>
         <p>Dear Customer,</p>
-        <p>You have successfully paid the sum of ${bill.amount.toFixed(2)} Naira for Meter No ${bill.meterNumber}.</p>
+        <p>You have successfully paid the sum of ${bill.amount.toFixed(2)} Naira for Meter No ${bill.meterNumber} with a token of ${bill.token}.</p>
         <p>Thank you for choosing our service!</p>
       </div> 
     </body>
   </html>
 `;
 
-   await sendEmail(bill.email,'Electricity Bill Subscription', `you have successfully paid the sum of ${bill.amount} for meter No ${bill.meterNumber}`,html)
+   await sendEmail(bill.email,'Electricity Bill Subscription', `you have successfully paid the sum of ${bill.amount} for meter No ${bill.meterNumber} with a token of ${bill.token}`,html)
     return new Response(JSON.stringify(bill),{status:201})
   } catch (error) {
    console.log(error);

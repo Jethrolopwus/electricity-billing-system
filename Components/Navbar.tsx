@@ -33,9 +33,9 @@ const Navbar = () => {
           <h1 className='text-3xl font-bold mr-6 sm:text-4xl'>E-Billing</h1>
           <ul className='hidden gap-4 md:flex'>
             <li onClick={handleScrollTo} className='font-bold text-lg'>Home </li>
-            <li onClick={handleScrollTo} className='font-bold text-lg cursor-pointer'>Princing</li>
-            <li onClick={handleScrollTo} className='font-bold text-lg cursor-pointer'>About</li>
-            <li onClick={handleScrollTo} className='font-bold text-lg cursor-pointer'>Contact</li>
+            <li onClick={handleScrollTo} className='font-bold text-lg cursor-pointer'>Pricing</li>
+            {/* <li onClick={handleScrollTo} className='font-bold text-lg cursor-pointer'>About</li>
+            <li onClick={handleScrollTo} className='font-bold text-lg cursor-pointer'>Contact</li> */}
           </ul>
         </div>
         <div className='hidden md:flex pr-4'>
