@@ -25,6 +25,12 @@ const Navbar = () => {
      if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
+    const handleScrollTo = ( ) =>{
+      const section =document.getElementById('HOME')
+      if (section) {
+        section.scrollIntoView({behavior: "smooth"});
+      }
+    }
 }
   return (
     <div className='w-screen  md:h-[80px] z-30 bg-slate-200 fixed drop-shadow-lg'>
@@ -32,7 +38,7 @@ const Navbar = () => {
         <div className='flex items-center'>
           <h1 className='text-3xl font-bold mr-6 sm:text-4xl'>E-Billing</h1>
           <ul className='hidden gap-4 md:flex'>
-            <li><Link href='/home' className='font-bold text-lg'>Home</Link></li>
+            <li onClick={handleScrollTo} className='font-bold text-lg'>Home</li>
             <li onClick={handleScrollTo} className='font-bold text-lg cursor-pointer'>Princing</li>
           </ul>
         </div>
