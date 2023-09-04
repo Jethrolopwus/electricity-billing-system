@@ -15,7 +15,7 @@ const BillsSchema = new Schema<Bills>({
   type: Schema.Types.ObjectId,
   ref: 'User',
   required: [true, 'Account Owner is required']
- },
+ },  
  prepaid: {
   type: String,
   required: [true, 'prepaid is required']

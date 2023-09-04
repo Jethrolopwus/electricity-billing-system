@@ -39,6 +39,9 @@ const Navbar = () => {
           <h1 className='text-3xl font-bold mr-6 sm:text-4xl'>E-Billing</h1>
           <ul className='hidden gap-4 md:flex'>
             <li onClick={handleScrollTo} className='font-bold text-lg'>Home</li>
+            <li onClick={handleScrollTo} className='font-bold text-lg cursor-pointer'>About</li>
+            <li onClick={handleScrollTo} className='font-bold text-lg cursor-pointer'>Contact</li>
+            <li onClick={handleScrollTo} className='font-bold text-lg cursor-pointer'>Support</li>
             <li onClick={handleScrollTo} className='font-bold text-lg cursor-pointer'>Princing</li>
           </ul>
         </div>
@@ -55,10 +58,13 @@ const Navbar = () => {
       </div>
       {nav &&
         <div className='w-full h-full bg-slate-300 flex md:hidden flex-col justify-between items-center px-2'>
-          <div className='flex items-center'>
+          <div className='flex items-center gap-8'>
             {/* <h1 className='text-3xl font-bold mr-6 sm:text-4xl'>E-Billing</h1> */}
             <ul className='flex flex-col'>
               <li><a href="/" className='font-bold text-lg'>Home</a></li>
+              <li><Link href=" " className='font-bold text-lg'>About</Link></li>
+              <li><Link href=" " className='font-bold text-lg'>Conntact</Link></li>
+              <li><Link href=" " className='font-bold text-lg'>Support</Link></li>
               <li><Link href=" " className='font-bold text-lg'>Princing</Link></li>
             </ul>
           </div>
