@@ -19,7 +19,7 @@ const DashboardPage = (props: Props) => {
   if (!user) {
     redirect('/')
     }
-    setCurrentUser(user)
+    setCurrentUser(JSON.parse(user))
 }
   },[])
   

@@ -3,8 +3,9 @@ import React, { ChangeEvent, FormEvent, HtmlHTMLAttributes, useState } from 'rea
 
 const MainContent = ({data}:{data: any}) => {
   const [selectedOption1, setSelectedOption1] = useState('');
+  const [loading,setLoading]=useState(false);
   const [selectedOption2, setSelectedOption2] = useState('');
-  const [userData]= useState(data)
+  const userData= data
   const [dataObj, setDataObj] = useState({
     meterNumber: '',
     phoneNumber: '',
@@ -35,11 +36,13 @@ const MainContent = ({data}:{data: any}) => {
     if (selectedOption1 && selectedOption2) {
       return alert('You are to select just one option')
     }
+    setLoading(true)
     let obj = {
       ...dataObj,
       accountOwner: userData?._id,
       prepaid: selectedOption1,
-      postPaid: selectedOption2
+      postPaid: selectedOption2,
+      email: userData?.email
     };
     console.log(obj)
     const res = await fetch('api/billing', {
@@ -48,12 +51,15 @@ const MainContent = ({data}:{data: any}) => {
     });
 
     if (res.ok) {
-      const  data = await res.json()
+      const  body = await res.json()
       alert('Payment successful')
       return
     }
+    setSelectedOption1('')
+    setSelectedOption2('')
+    setDataObj({meterNumber:'',phoneNumber:'',amount:0.00, prepaid:'',postPaid:''})
+    setLoading(false)
   }  
-console.log(userData)
   return (
     <div className="p-4 w-[80%] h-[80%] mx-auto ">
       <h2 className="text-xl font-bold mb-4 mt-6">Welcome {userData?.userName}</h2>
@@ -110,9 +116,10 @@ console.log(userData)
         </div> 
         <button
           type="submit"
+          disabled={loading}
           className="bg-gray-800 w-1/3 text-white p-2 rounded-md mt-4 text-xl"
         >
-        Make Payment
+        {loading? 'Loading....':'Make Payment'}
         </button>
       </form>
     </div>
