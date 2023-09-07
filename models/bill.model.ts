@@ -7,7 +7,7 @@ interface Bills {
  meterNumber: string;
  phoneNumber: string;
  prepaid:string
- postPaid: string
+ postpaid: string
 }
 const BillsSchema = new Schema<Bills>({
 
@@ -18,11 +18,9 @@ const BillsSchema = new Schema<Bills>({
  },  
  prepaid: {
   type: String,
-  required: [true, 'prepaid is required']
  },
- postPaid: {
+ postpaid: {
   type: String,
-  required: [true, 'prepaid is required']
  },
  amount: {
   type: Number,

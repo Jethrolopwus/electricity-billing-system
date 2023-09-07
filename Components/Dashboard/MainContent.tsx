@@ -12,6 +12,7 @@ const MainContent = ({data}:{data: any}) => {
     prepaid: '',
     postPaid: '',
   })
+  
 
   const handleOption1Change = (event: ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption1(event.target.value);
@@ -31,13 +32,16 @@ const MainContent = ({data}:{data: any}) => {
     if (!(dataObj.meterNumber || dataObj.amount || dataObj.phoneNumber)) {
       return alert('all field required')
     }
+    if (selectedOption1 && selectedOption2) {
+      return alert('You are to select just one option')
+    }
     let obj = {
       ...dataObj,
       accountOwner: userData?._id,
-      prepaid: setSelectedOption1,
-      postPaid: setSelectedOption2
+      prepaid: selectedOption1,
+      postPaid: selectedOption2
     };
-    
+    console.log(obj)
     const res = await fetch('api/billing', {
       method: 'POST',
       body: JSON.stringify(obj)
@@ -45,7 +49,6 @@ const MainContent = ({data}:{data: any}) => {
 
     if (res.ok) {
       const  data = await res.json()
-      console.log(data)
       alert('Payment successful')
       return
     }
